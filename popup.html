@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vendor/jquery-3.4.1.min.js"></script>
+    <link href="vendor/bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="content_scripts.css" rel="stylesheet">
+    <script src="vendor/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="util.js"></script>
+    <script src="popup.js"></script>
+    <style>
+      body {
+        width: 300px;
+        padding: 10px;
+        font-size: 14px !important;
+        overflow-x: hidden;
+      }
+      .header {
+        background: #ccc;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 10px;
+        font-size: 0.7rem;
+        font-weight: bolder;
+        color: #69f;
+      }
+      .list-group {
+        margin-bottom: 20px;
+      }
+      .status th span {
+        font-size: 14px !important;
+      }
+      .status td {
+        text-align: right;
+      }
+      #tabs {
+        margin-top: 10px;
+      }
+      #gamewith-tab.active {
+        font-weight: bolder;
+      }
+      #altema-tab.active {
+        font-weight: bolder;
+      }
+      .template {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="media header">
+          <img src="images/siren_48.png">
+          <div class="media-body">
+            風来のシレンアプリ版<br>- 救助掲示板拡張
+          </div>
+        </div>
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a href="#gamewith" id="gamewith-tab" class="nav-link active" role="tab" data-toggle="tab">GameWith</a>
+          </li>
+          <li class="nav-item">
+            <a href="#altema" id="altema-tab" class="nav-link" role="tab" data-toggle="tab">アルテマ</a>
+          </li>
+        </ul>
+
+        <div id="tabcontents" class="tab-content mt-3">
+          <div id="gamewith" class="tab-pane active" role="tabpanel" aria-labelledby="gamewith-tab">
+          
+
+            <div style="text-align:center;">
+              <a class="btn btn-success btn-block btn-sm update" style="font-size:12px;" href="https://gamewith.jp/furai-shiren/bbs/threads/show/771">更新</a>
+            </div>
+  
+            <h1>ステータス</h1>
+            <table class="table table-sm status">
+              <tr>
+                <th><span class="siren_sos_ext_sos">救助依頼</span></th>
+                <td><span class="count_sos">-</span>件</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_done">救助依頼（済み）</span></th>
+                <td><span class="count_sos_done">-</span>件</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_help">復活の呪文</span></th>
+                <td><span class="count_help">-</span>件</td>
+              </tr>
+              <tr>
+                <td colspan="2">（救助率：<span class="count_sos_done_percent">-</span>%）</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_thanks">お礼</span></th>
+                <td><span class="count_thanks">-</span>件</td>
+              </tr>
+              <tr>
+                <td colspan="2">（お礼率：<span class="count_thanks_percent">-</span>%）</td>
+              </tr>
+            </table>
+    
+            <h1>救助ランキング</h1>
+            <table class="table table-sm ranking">
+              <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>回数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="template">
+                    <td><span class="name">-</span></td>
+                    <td><span class="count">-</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="alert alert-warning" role="alert">
+              ※最新5ページを集計<br><br>
+              最終更新日時：<br><span class="last_modified">-</span>
+            </div>
+          </div>
+
+          <div id="altema" class="tab-pane" role="tabpanel" aria-labelledby="altema-tab">
+            
+            <div style="text-align:center;">
+              <a class="btn btn-info btn-block btn-sm update" style="font-size:12px;" href="https://altema.jp/shiren/kyujokeijiban">更新</a>
+            </div>
+
+            <h1>ステータス</h1>
+            <table class="table table-sm status">
+              <tr>
+                <th><span class="siren_sos_ext_sos">救助依頼</span></th>
+                <td><span class="count_sos">-</span>件</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_done">救助依頼（済み）</span></th>
+                <td><span class="count_sos_done">-</span>件</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_help">復活の呪文</span></th>
+                <td><span class="count_help">-</span>件</td>
+              </tr>
+              <tr>
+                <td colspan="2">（救助率：<span class="count_sos_done_percent">-</span>%）</td>
+              </tr>
+              <tr>
+                <th><span class="siren_sos_ext_sos_thanks">お礼</span></th>
+                <td><span class="count_thanks">-</span>件</td>
+              </tr>
+              <tr>
+                <td colspan="2">（お礼率：<span class="count_thanks_percent">-</span>%）</td>
+              </tr>
+            </table>
+    
+            <h1>救助ランキング</h1>
+            <table class="table table-sm ranking">
+                <thead>
+                  <tr>
+                      <th>名前</th>
+                      <th>回数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="template">
+                      <td><span class="name">-</span></td>
+                      <td><span class="count">-</span></td>
+                  </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning" role="alert">
+              ※最新3ページを集計<br><br>
+              最終更新日時：<br><span class="last_modified">-</span>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>

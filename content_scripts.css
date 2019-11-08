@@ -1,0 +1,70 @@
+.siren_sos_ext_sos {
+    background: #f33;
+    border-radius: 3px;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    color: #fff;
+    padding: 3px 6px;
+    margin-left: 8px;
+}
+.siren_sos_ext_sos_done {
+    background: #666;
+    border-radius: 3px;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    color: #fff;
+    padding: 3px 6px;
+    margin-left: 8px;
+}
+.siren_sos_ext_sos_done.getajcom {
+    cursor: pointer !important;
+    border-radius: 3px !important;
+    border: none !important;
+    padding: 3px 6px !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    display: inline-block !important;
+    margin-bottom: 0 !important;
+    line-height: 150% !important;
+}
+.siren_sos_ext_sos_done a {
+    color: #fff !important;
+    cursor: pointer !important;
+}
+.siren_sos_ext_sos_done a:hover {
+    color: #cdf !important;
+}
+.siren_sos_ext_sos_help {
+    background: #66f;
+    border-radius: 3px;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    color: #fff;
+    padding: 3px 6px;
+    margin-left: 8px;
+}
+.siren_sos_ext_sos_thanks {
+    background: #f39;
+    border-radius: 3px;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    color: #fff;
+    padding: 3px 16px;
+    margin-left: 8px;
+}
+.siren_sos_ext_sos_ref {
+    background: #9cf;
+    border-radius: 3px;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    color: #fff;
+    padding: 3px 6px;
+    margin-left: 8px;
+}
+.siren_sos_ext_sos_ref a {
+    color: #fff !important;
+    cursor: pointer !important;
+}
+.siren_sos_ext_sos_ref a:hover {
+    color: #cdf !important;
+}

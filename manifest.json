@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "風来のシレンアプリ版 - 救助掲示板拡張",
+    "short_name": "シレン救助",
+    "description": "風来のシレンアプリ版の救助掲示板を使いやすくします",
+    "version": "1.3",
+    "icons": {
+        "32": "images/siren_32.png",
+        "48": "images/siren_48.png",
+        "128": "images/siren_128.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://gamewith.jp/furai-shiren/**" ],
+        "js": ["vendor/jquery-3.4.1.min.js", "util.js", "parser_gamewith.js", "content_scripts.js"],
+        "css": ["content_scripts.css"],
+        "run_at": "document_end"
+    },{
+        "matches": ["https://altema.jp/shiren/**" ],
+        "js": ["vendor/jquery-3.4.1.min.js", "util.js", "parser_altema.js", "content_scripts.js"],
+        "css": ["content_scripts.css"]
+    }],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "images/siren_icon.png",
+        "default_title": "風来のシレンアプリ版 - 救助掲示板拡張",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "https://gamewith.jp/furai-shiren/**",
+        "https://altema.jp/shiren/**"
+    ]
+}
